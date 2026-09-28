@@ -1,0 +1,33 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "biomesoplenty"
+      ]
+    }
+  ],
+  "type": "mechanical_botany:composting",
+  "ingredients": [
+    [
+      {
+        "item": "biomesoplenty:toadstool_block"
+      },
+      {
+        "item": "biomesoplenty:glowshroom_block"
+      }
+    ]
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "count": 1,
+      "item": "mechanical_botany:compost"
+    },
+    {
+      "chance": 0.85,
+      "count": 1,
+      "item": "mechanical_botany:compost"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "garnished"
+      ]
+    }
+  ],
+  "type": "mechanical_botany:composting",
+  "ingredients": [
+    {
+      "tag": "garnished:ungarnished_nuts"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "count": 1,
+      "item": "mechanical_botany:compost"
+    },
+    {
+      "chance": 0.15,
+      "count": 1,
+      "item": "mechanical_botany:compost"
+    }
+  ]
+}

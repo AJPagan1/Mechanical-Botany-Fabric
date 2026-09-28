@@ -1,0 +1,197 @@
+plugins {
+	id 'fabric-loom' version "${loom_version}"
+	id 'maven-publish'
+}
+
+version = project.version
+group = project.group
+
+base {
+	archivesName = "mechanical_botany"
+}
+
+repositories {
+
+	/*
+	 * ================================================================
+	 * JEI
+	 * ================================================================
+	 */
+
+	maven {
+		name = "BlameJared"
+		url = "https://maven.blamejared.com/"
+	}
+}
+
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"mechanical_botany" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+}
+
+dependencies {
+
+	/*
+	 * ================================================================
+	 * MINECRAFT
+	 * ================================================================
+	 */
+
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+
+	mappings loom.officialMojangMappings()
+
+	/*
+	 * ================================================================
+	 * FABRIC
+	 * ================================================================
+	 */
+
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	/*
+	 * ================================================================
+	 * CREATE FABRIC
+	 * ================================================================
+	 */
+
+	modImplementation files(
+			"libs/create-fabric-6.0.8.1+build.1744-mc1.20.1.jar"
+	)
+
+	/*
+	 * ================================================================
+	 * CREATE FABRIC DEPENDENCIES
+	 * ================================================================
+	 */
+
+	modImplementation fileTree(
+			dir: "libs/create-deps",
+			include: ["*.jar"]
+	)
+
+	/*
+	 * ================================================================
+	 * JUST ENOUGH ITEMS API
+	 * ================================================================
+	 *
+	 * JEI is compile-only and remains optional at runtime.
+	 */
+
+	compileOnly "mezz.jei:jei-1.20.1-common-api:15.56.0.205"
+
+	compileOnly "mezz.jei:jei-1.20.1-fabric-api:15.56.0.205"
+}
+
+processResources {
+	def modVersion = project.version
+
+	inputs.property "version", modVersion
+
+	filesMatching("fabric.mod.json") {
+		expand "version": modVersion
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.release = 17
+}
+
+java {
+	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
+}
+
+/*
+ * ================================================================
+ * DEVELOPMENT JAR
+ * ================================================================
+ *
+ * This is the intermediary jar Loom remaps into the actual
+ * distributable release jar.
+ */
+
+jar {
+	archiveBaseName = "mechanical_botany"
+	archiveVersion = project.version
+	archiveClassifier = "dev"
+
+	def projectName = project.name
+
+	inputs.property "projectName", projectName
+
+	from("LICENSE") {
+		rename {
+			"${it}_${projectName}"
+		}
+	}
+}
+
+/*
+ * ================================================================
+ * DEVELOPMENT SOURCES JAR
+ * ================================================================
+ */
+
+sourcesJar {
+	archiveBaseName = "mechanical_botany"
+	archiveVersion = project.version
+	archiveClassifier = "dev-sources"
+}
+
+/*
+ * ================================================================
+ * FINAL RELEASE JAR
+ * ================================================================
+ *
+ * This is the jar that should actually be distributed.
+ *
+ * Example:
+ *
+ * mechanical_botany-1.0.5-fabric.jar
+ */
+
+remapJar {
+	archiveFileName = "mechanical_botany-${project.version}-fabric.jar"
+}
+
+/*
+ * ================================================================
+ * FINAL SOURCES JAR
+ * ================================================================
+ *
+ * Example:
+ *
+ * mechanical_botany-1.0.5-fabric-sources.jar
+ */
+
+remapSourcesJar {
+	archiveFileName = "mechanical_botany-${project.version}-fabric-sources.jar"
+}
+
+/*
+ * ================================================================
+ * MAVEN PUBLISHING
+ * ================================================================
+ */
+
+publishing {
+	publications {
+		create("mavenJava", MavenPublication) {
+			from components.java
+		}
+	}
+
+	repositories {
+	}
+}

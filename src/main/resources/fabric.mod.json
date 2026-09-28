@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "mechanical_botany",
+	"version": "${version}",
+	"name": "Create: Mechanical Botany",
+	"description": "Gather plants from automation",
+	"authors": [
+		"DakotaPride"
+	],
+	"contributors": [
+		"Pagan - Fabric Port"
+	],
+	"license": "MIT",
+	"icon": "icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.cmb.mechanical_botany.MechanicalBotany"
+		],
+		"client": [
+			"com.cmb.mechanical_botany.client.MechanicalBotanyClient"
+		],
+		"jei_mod_plugin": [
+			"com.cmb.mechanical_botany.compat.jei.CreateMechanicalBotanyJEI"
+		]
+	},
+	"mixins": [
+		"mechanical_botany.mixins.json",
+		{
+			"config": "mechanical_botany.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"create": ">=6.0.6"
+	}
+}

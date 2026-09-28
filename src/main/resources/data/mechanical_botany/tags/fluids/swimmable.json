@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:water",
+
+    "mechanical_botany:compost",
+    "mechanical_botany:flowing_compost",
+
+    "mechanical_botany:molten_compost",
+    "mechanical_botany:flowing_molten_compost",
+
+    "mechanical_botany:void_compost",
+    "mechanical_botany:flowing_void_compost"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "garnished"
+      ]
+    }
+  ],
+  "type": "mechanical_botany:insolating",
+  "ingredients": [
+    {
+      "type": "fluid_stack",
+      "amount": 81000,
+      "fluid": "minecraft:water"
+    },
+    {
+      "item": "garnished:bok_choy_seeds"
+    }
+  ],
+  "processingTime": 1600,
+  "results": [
+    {
+      "count": 1,
+      "item": "garnished:bok_choy"
+    },
+    {
+      "count": 1,
+      "item": "garnished:bok_choy_seeds"
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "item": "garnished:bok_choy_seeds"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "biomeswevegone"
+      ]
+    }
+  ],
+  "type": "mechanical_botany:insolating",
+  "ingredients": [
+    {
+      "type": "fluid_stack",
+      "amount": 81000,
+      "fluid": "minecraft:water"
+    },
+    {
+      "item": "biomeswevegone:oddion_bulb"
+    }
+  ],
+  "processingTime": 3200,
+  "results": [
+    {
+      "count": 2,
+      "item": "biomeswevegone:oddion_bulb"
+    },
+    {
+      "chance": 0.35,
+      "count": 1,
+      "item": "biomeswevegone:oddion_bulb"
+    }
+  ]
+}

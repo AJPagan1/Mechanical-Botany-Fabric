@@ -1,0 +1,33 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "garnished"
+      ]
+    }
+  ],
+  "type": "mechanical_botany:insolating",
+  "ingredients": [
+    {
+      "type": "fluid_stack",
+      "amount": 8100,
+      "fluid": "mechanical_botany:void_compost"
+    },
+    {
+      "item": "garnished:barren_roots"
+    }
+  ],
+  "processingTime": 8000,
+  "results": [
+    {
+      "count": 2,
+      "item": "garnished:barren_roots"
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "item": "garnished:chorus_tuft"
+    }
+  ]
+}

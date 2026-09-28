@@ -1,0 +1,28 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "hibernalherbs"
+      ]
+    }
+  ],
+  "type": "mechanical_botany:insolating",
+  "ingredients": [
+    {
+      "type": "fluid_stack",
+      "amount": 16200,
+      "fluid": "mechanical_botany:void_compost"
+    },
+    {
+      "item": "hibernalherbs:sage"
+    }
+  ],
+  "processingTime": 8000,
+  "results": [
+    {
+      "count": 2,
+      "item": "hibernalherbs:sage"
+    }
+  ]
+}

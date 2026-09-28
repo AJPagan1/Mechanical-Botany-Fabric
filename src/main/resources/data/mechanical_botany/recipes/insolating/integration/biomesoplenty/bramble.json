@@ -1,0 +1,33 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "biomesoplenty"
+      ]
+    }
+  ],
+  "type": "mechanical_botany:insolating",
+  "ingredients": [
+    {
+      "type": "fluid_stack",
+      "amount": 16200,
+      "fluid": "minecraft:lava"
+    },
+    {
+      "item": "biomesoplenty:bramble"
+    }
+  ],
+  "processingTime": 1600,
+  "results": [
+    {
+      "count": 2,
+      "item": "biomesoplenty:bramble"
+    },
+    {
+      "chance": 0.45,
+      "count": 1,
+      "item": "biomesoplenty:bramble_leaves"
+    }
+  ]
+}

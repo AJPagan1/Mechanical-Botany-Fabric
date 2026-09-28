@@ -1,0 +1,33 @@
+# Gradle
+.gradle/
+build/
+out/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Minecraft runtime
+run/
+runs/
+
+# Logs
+logs/
+*.log
+
+# Crash reports
+crash-reports/
+
+# Generated files
+generated/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp

@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.cmb.mechanical_botany.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "EntitySwimmableFluidMixin",
+    "LivingEntitySwimmableFluidMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

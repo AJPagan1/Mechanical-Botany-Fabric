@@ -1,0 +1,37 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "biomeswevegone"
+      ]
+    }
+  ],
+  "type": "mechanical_botany:insolating",
+  "ingredients": [
+    {
+      "type": "fluid_stack",
+      "amount": 81000,
+      "fluid": "minecraft:water"
+    },
+    {
+      "item": "biomeswevegone:pale_pumpkin_seeds"
+    }
+  ],
+  "processingTime": 4800,
+  "results": [
+    {
+      "count": 1,
+      "item": "biomeswevegone:pale_pumpkin"
+    },
+    {
+      "count": 1,
+      "item": "biomeswevegone:pale_pumpkin_seeds"
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "item": "biomeswevegone:pale_pumpkin_seeds"
+    }
+  ]
+}

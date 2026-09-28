@@ -1,0 +1,43 @@
+package com.cmb.mechanical_botany.kinetics.composter;
+
+import com.simibubi.create.AllPartialModels;
+import com.simibubi.create.content.kinetics.base.SingleAxisRotatingVisual;
+import dev.engine_room.flywheel.api.visual.DynamicVisual;
+import dev.engine_room.flywheel.api.visualization.VisualizationContext;
+import dev.engine_room.flywheel.lib.model.Models;
+import dev.engine_room.flywheel.lib.visual.SimpleDynamicVisual;
+
+public class MechanicalComposterVisual
+        extends SingleAxisRotatingVisual<MechanicalComposterBlockEntity>
+        implements SimpleDynamicVisual {
+
+    public MechanicalComposterVisual(
+            VisualizationContext context,
+            MechanicalComposterBlockEntity blockEntity,
+            float partialTick
+    ) {
+        super(
+                context,
+                blockEntity,
+                partialTick,
+                Models.partial(AllPartialModels.COGWHEEL)
+        );
+
+        animate(partialTick);
+    }
+
+    @Override
+    public void beginFrame(DynamicVisual.Context context) {
+        animate(context.partialTick());
+    }
+
+    private void animate(float partialTick) {
+        /*
+         * The base SingleAxisRotatingVisual handles the actual
+         * kinetic cogwheel rotation.
+         *
+         * The original Mechanical Botany visual does not add any
+         * extra animation here.
+         */
+    }
+}

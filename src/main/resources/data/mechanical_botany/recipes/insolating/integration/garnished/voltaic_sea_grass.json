@@ -1,0 +1,28 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "garnished"
+      ]
+    }
+  ],
+  "type": "mechanical_botany:insolating",
+  "ingredients": [
+    {
+      "type": "fluid_stack",
+      "amount": 81000,
+      "fluid": "minecraft:water"
+    },
+    {
+      "item": "garnished:voltaic_sea_grass"
+    }
+  ],
+  "processingTime": 3200,
+  "results": [
+    {
+      "count": 2,
+      "item": "garnished:voltaic_sea_grass"
+    }
+  ]
+}
