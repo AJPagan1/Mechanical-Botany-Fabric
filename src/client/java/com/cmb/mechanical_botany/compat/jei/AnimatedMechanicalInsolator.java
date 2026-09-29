@@ -59,15 +59,6 @@ public class AnimatedMechanicalInsolator
          * ================================================================
          * ROTATING INSOLATOR COG
          * ================================================================
-         *
-         * This uses our pre-rotated Mechanical Pump cog.
-         *
-         * The model itself is already lying horizontally, with its
-         * rotational axle on the Y axis. That means JEI only needs to
-         * animate the Y rotation.
-         *
-         * We no longer need to combine a 90-degree orientation change
-         * with the animation itself.
          */
 
         blockElement(
