@@ -140,21 +140,6 @@ public class MechanicalInsolatorBlockEntity
                 )
         );
 
-        /*
-         * The original 1.0.5 config stores the tank size in mB.
-         *
-         * Fabric Transfer API:
-         *
-         * 1 mB = 81 units
-         *
-         * Default:
-         *
-         * 1000 mB * 81 = 81000
-         *
-         * Maximum:
-         *
-         * 16000 mB * 81 = 1296000
-         */
         long configuredTankCapacity =
                 (long) ModConfigs
                         .server()
