@@ -31,13 +31,6 @@ public abstract class LocalPlayerSwimmableFluidMixin {
      * ================================================================
      * CLIENT SWIM-SPRINT BRIDGE
      * ================================================================
-     *
-     * Vanilla LocalPlayer has additional water-specific sprint checks.
-     *
-     * Without this bridge, the player can interact with the fluid but
-     * cannot begin vanilla's sprint-swimming state in a custom fluid.
-     *
-     * This portion has already been confirmed working in-game.
      */
     @Inject(
             method = "aiStep",
