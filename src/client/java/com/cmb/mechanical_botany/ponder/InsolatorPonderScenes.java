@@ -23,14 +23,6 @@ import net.minecraft.world.phys.Vec3;
 
 public final class InsolatorPonderScenes {
 
-    /*
-     * The three compost-use Ponder structures contain a four-block-tall
-     * Create Fluid Tank column.
-     *
-     * On Fabric, the old NeoForge Ponder NBT does not restore the custom
-     * fluid contents correctly, so the fluid is supplied to the tank
-     * directly by the scene.
-     */
     private static final long PONDER_FLUID_AMOUNT =
             FluidConstants.BUCKET * 16L;
 
@@ -293,19 +285,6 @@ public final class InsolatorPonderScenes {
                     70
             );
 
-            /*
-             * The released NeoForge Java hardcoded:
-             *
-             * "Mechanical Insolators also require a fluid to be
-             * provided to them in order to process"
-             *
-             * However, the original 1.0.5 language file already contains
-             * the intended localized version:
-             *
-             * mechanical_botany.ponder.insolator.text_3
-             *
-             * We use that existing translation here.
-             */
             scene.overlay()
                     .showText(
                             100
