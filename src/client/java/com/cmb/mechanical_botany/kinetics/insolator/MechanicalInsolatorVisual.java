@@ -47,11 +47,5 @@ public class MechanicalInsolatorVisual
     private void animate(
             float partialTick
     ) {
-        /*
-         * The original 1.0.5 visual leaves this empty.
-         *
-         * SingleAxisRotatingVisual handles the actual kinetic
-         * rotation automatically.
-         */
     }
 }
