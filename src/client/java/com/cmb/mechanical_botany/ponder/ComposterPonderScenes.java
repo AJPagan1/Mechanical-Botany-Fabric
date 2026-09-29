@@ -56,10 +56,6 @@ public final class ComposterPonderScenes {
     private static final long ONE_BUCKET =
             FluidConstants.BUCKET;
 
-    /*
-     * The original Creative Fluid Tank in compost_creation.nbt contains
-     * 32 buckets of Lava.
-     */
     private static final long LAVA_TANK_AMOUNT =
             FluidConstants.BUCKET * 32L;
 
@@ -993,21 +989,6 @@ public final class ComposterPonderScenes {
      * ================================================================
      * CREATING LIQUID COMPOST
      * ================================================================
-     *
-     * This is the Fabric port of the full 1.0.5 NeoForge storyboard.
-     *
-     * Original structure:
-     *
-     * Compost
-     *   -> Item Drain
-     *   -> Liquid Compost tank
-     *   -> Basin
-     *
-     * Lava Creative Tank
-     *   -> Basin
-     *
-     * Heated Basin + Mechanical Mixer
-     *   -> Molten Liquid Compost
      */
 
     public static class CreatingLiquidCompost
@@ -1414,14 +1395,6 @@ public final class ComposterPonderScenes {
                     24
             );
 
-            /*
-             * Original 1.0.5 adds 500 mB four times.
-             *
-             * On Fabric that is:
-             *
-             * 500 mB = 40,500 transfer units.
-             */
-
             for (
                     int i = 1;
                     i <= 4;
@@ -1464,14 +1437,6 @@ public final class ComposterPonderScenes {
                             tank1,
                             Direction.DOWN
                     );
-
-            /*
-             * The original structure contains 32 buckets of Lava in the
-             * Creative Fluid Tank.
-             *
-             * Its old NeoForge NBT amount is not reliable on Fabric, so
-             * populate it explicitly.
-             */
 
             setFluidTank(
                     scene,
@@ -1537,13 +1502,6 @@ public final class ComposterPonderScenes {
             scene.idle(
                     14
             );
-
-            /*
-             * Original basin state:
-             *
-             * 1000 mB Lava
-             *  500 mB Liquid Compost
-             */
 
             setBasinInputs(
                     scene,
@@ -1640,14 +1598,6 @@ public final class ComposterPonderScenes {
              * ============================================================
              * CONSUME THE INGREDIENTS
              * ============================================================
-             *
-             * Original 1.0.5 drains both ingredients over five stages:
-             *
-             * Liquid Compost:
-             * 500 mB / 5 = 100 mB per stage
-             *
-             * Lava:
-             * 1000 mB / 5 = 200 mB per stage
              */
 
             scene.addKeyframe();
