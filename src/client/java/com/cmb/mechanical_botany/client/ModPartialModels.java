@@ -18,12 +18,5 @@ public final class ModPartialModels {
     }
 
     public static void init() {
-        /*
-         * Intentionally empty.
-         *
-         * Calling this during client initialization forces this class
-         * to load early enough for Flywheel to discover and bake the
-         * partial model during Minecraft's normal model-loading cycle.
-         */
     }
 }
