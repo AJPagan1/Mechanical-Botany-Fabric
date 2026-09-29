@@ -108,20 +108,6 @@ public abstract class EntitySwimmableFluidMixin {
      * ================================================================
      * ITEM BUOYANCY FLUID HEIGHT
      * ================================================================
-     *
-     * ItemEntity's vanilla water movement checks:
-     *
-     *     isInWater()
-     *     &&
-     *     getFluidHeight(FluidTags.WATER) > 0.1F
-     *
-     * Our general fluid bridge supplies isInWater().
-     *
-     * When an ItemEntity asks for WATER height, include the actual
-     * intersecting Mechanical Botany fluid depth.
-     *
-     * The important part here is that getBotanyFluidHeight() now
-     * recognizes BOTH source and flowing variants.
      */
     @Inject(
             method = "getFluidHeight",
@@ -872,26 +858,6 @@ public abstract class EntitySwimmableFluidMixin {
      * ================================================================
      * BOTANY FLUID FAMILY CHECK
      * ================================================================
-     *
-     * THIS IS THE IMPORTANT FIX.
-     *
-     * Minecraft registers source and flowing fluids as separate Fluid
-     * instances.
-     *
-     * Comparing the FluidState's exact type to only the registered
-     * source fluid therefore fails for flowing blocks.
-     *
-     * Every Mechanical Botany placeable fluid is a FlowingFluid.
-     *
-     * Normalize whichever variant is present:
-     *
-     *     source variant  -> source
-     *     flowing variant -> source
-     *
-     * and compare the normalized source identities.
-     *
-     * This allows source AND flowing blocks to be treated as the same
-     * fluid family.
      */
     @Unique
     private boolean mechanicalBotany$isBotanyFluid(
@@ -1013,9 +979,6 @@ public abstract class EntitySwimmableFluidMixin {
      * ================================================================
      * PARTICLE FLUID FAMILY
      * ================================================================
-     *
-     * Normalize source/flowing exactly like isBotanyFluid() so flowing
-     * Compost also gets the correct custom splash particle.
      */
     @Unique
     private ParticleOptions mechanicalBotany$getSplashParticle(
