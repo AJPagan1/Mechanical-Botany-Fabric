@@ -16,16 +16,6 @@ public abstract class LivingEntitySwimmableFluidMixin {
      * ================================================================
      * FLUID JUMP / ASCENT
      * ================================================================
-     *
-     * Vanilla LivingEntity.aiStep() specifically asks for
-     * FluidTags.WATER when deciding whether holding Jump should keep
-     * pushing the entity upward.
-     *
-     * Mechanical Botany's fluids are tracked under our SWIMMABLE tag,
-     * so substitute that tag here.
-     *
-     * SWIMMABLE also contains #minecraft:water, therefore vanilla water
-     * continues to behave normally.
      */
     @Redirect(
             method = "aiStep",
@@ -43,27 +33,6 @@ public abstract class LivingEntitySwimmableFluidMixin {
      * ================================================================
      * BREATHING / DROWNING
      * ================================================================
-     *
-     * Vanilla LivingEntity.baseTick() checks:
-     *
-     *     isEyeInFluid(FluidTags.WATER)
-     *
-     * before reducing air supply.
-     *
-     * Forge's FluidType system extends this behavior to custom fluids
-     * whose FluidType allows drowning. Mechanical Botany's Compost
-     * fluids use that default drowning behavior.
-     *
-     * Fabric does not automatically bridge FluidType.canDrown() into
-     * vanilla's breathing system, so we substitute our SWIMMABLE tag.
-     *
-     * Because SWIMMABLE contains both vanilla water and our three
-     * placeable Compost fluids, this preserves normal water drowning
-     * while adding:
-     *
-     * - Liquid Compost
-     * - Molten Liquid Compost
-     * - Void Liquid Compost
      */
     @Redirect(
             method = "baseTick",
