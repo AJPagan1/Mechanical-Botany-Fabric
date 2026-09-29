@@ -56,13 +56,6 @@ public class CreateMechanicalBotanyJEI
     ) {
         categories.clear();
 
-        /*
-         * Keep the same ordering as the original 1.0.5 JEI plugin:
-         *
-         * 1. Insolating
-         * 2. Composting
-         */
-
         InsolatingCategory insolatingCategory =
                 InsolatingCategory.create(
                         registration
