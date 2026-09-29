@@ -32,12 +32,5 @@ public class MechanicalComposterVisual
     }
 
     private void animate(float partialTick) {
-        /*
-         * The base SingleAxisRotatingVisual handles the actual
-         * kinetic cogwheel rotation.
-         *
-         * The original Mechanical Botany visual does not add any
-         * extra animation here.
-         */
     }
 }
