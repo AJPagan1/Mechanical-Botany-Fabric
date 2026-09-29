@@ -93,11 +93,6 @@ public class InsolatingCategory
          * ============================================================
          * FLUID INPUT
          * ============================================================
-         *
-         * The NeoForge version required its own Forge fluid helper.
-         *
-         * Create Fabric already provides a Fabric-native JEI helper for
-         * Create FluidIngredient, so we use it directly.
          */
 
         addFluidSlot(
@@ -274,10 +269,6 @@ public class InsolatingCategory
          * ============================================================
          * PROCESSING TIME
          * ============================================================
-         *
-         * ProcessingRecipe stores time in ticks.
-         *
-         * Original 1.0.5 displays that value as seconds.
          */
 
         graphics.drawString(
