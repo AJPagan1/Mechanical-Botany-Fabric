@@ -96,11 +96,6 @@ public final class ModPonderScenes {
                         new ComposterPonderScenes.CreatingLiquidCompost()
                 );
 
-        /*
-         * Original 1.0.5 also exposes the three Compost-use scenes from
-         * the Mechanical Composter's Ponder menu.
-         */
-
         blockHelper
                 .forComponents(
                         ModBlocks.MECHANICAL_COMPOSTER
