@@ -34,10 +34,6 @@ public class MechanicalInsolatorBlock
         );
     }
 
-    /*
-     * The original 1.0.5 Insolator only exposes its fluid capability
-     * from the bottom.
-     */
     public static boolean hasPipeTowards(
             Direction direction
     ) {
@@ -79,9 +75,6 @@ public class MechanicalInsolatorBlock
                 insolator -> {
                     boolean emptyOutput = true;
 
-                    /*
-                     * Retrieve all processed output first.
-                     */
                     for (
                             int slot = 0;
                             slot < insolator.outputInv.getSlotCount();
@@ -110,10 +103,6 @@ public class MechanicalInsolatorBlock
                                 );
                     }
 
-                    /*
-                     * The original only returns the unprocessed input
-                     * when there were no outputs to retrieve.
-                     */
                     if (emptyOutput) {
                         for (
                                 int slot = 0;
